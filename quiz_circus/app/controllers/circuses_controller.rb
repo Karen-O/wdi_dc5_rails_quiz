@@ -1,4 +1,5 @@
 class CircusesController < ApplicationController
+  
   def index
     @circuses = Circus.all
   end
