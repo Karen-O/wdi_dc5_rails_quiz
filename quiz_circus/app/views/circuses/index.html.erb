@@ -1,21 +1,13 @@
 <h2>Circuses</h2>
 
 <ul>
-  <% @Circuses.each do |circus| %>
+  <% @circuses.each do |circus| %>
     <li>
       <%= link_to(circus.name, circus) %><br>
-      <%= image_tag(circus.image_url, options={}) %>
+      <%= image_tag(circus.image_url) %>
     </li>
   <% end %>
 </ul>
 
 
 
-def image_tag(source, options={})
-  options = options.symbolize_keys
-
-  src = options[:src] = path_to_image(source)
-
-  unless src =~ /^(?:cid|data):/ || src.blank?
-    options[:alt] = options.fetch(:alt){ image_alt(src) }
-  end

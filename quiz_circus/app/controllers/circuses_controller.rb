@@ -34,6 +34,11 @@ class CircusesController < ApplicationController
     end
   end
 
+  def show
+    @circus = Circus.find(params[:id])
+    @entertainers = Entertainer.where(circus_id: @circus.id)
+  end
+
   def destroy
     @circus = Circus.find(params[:id])
     @circus.destroy

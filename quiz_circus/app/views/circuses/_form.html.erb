@@ -1,1 +1,13 @@
+<!-- ### Problem 2
+- edit the form partial for circuses to do the following:
+  - create a form for creating a new circus/editing an existing circus(using form_for rails helper)
+- edit the circus model
+  - prevent the ability to do empty form submissions in the model definition -->
 
+
+
+<%= form_for @circus do |f| %>
+  Name: <%= f.text_field :name %><br />
+  Image URL : <%= f.text_field :img_url %><br />
+  <%= f.submit %>
+<% end %>
